@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSCI571 HW4 Rebecca Lin 6432461489</title>
+<script type="text/javascript"> 
+
+	var xmlDoc;
+	
+	function loadXML(url) {
+		
+		if (window.XMLHttpRequest){// code for IE7+, Firefox, Chrome, Opera, Safari
+			
+			xmlhttp=new XMLHttpRequest();
+			
+		}else{// code for IE6, IE5
+			
+			xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+		
+		}
+		
+		xmlhttp.open("GET",url,false); //open, send, responseXML are 
+		xmlhttp.send(); //properties of XMLHTTPRequest 
+		xmlDoc=xmlhttp.responseXML;
+		return xmlDoc;
+	}
+	
+	function viewXML(what){
+		
+		if (what==""){ // check for empty input
+			hWin=window.open('','','');
+			hWin.focus();
+            hWin.alert("Please input file name.");
+            return;
+        }
+        
+        try{
+            xmlDoc = loadXML(what);}
+        catch(e){
+            alert("Cannot find this file.\nPlease try again.");
+            return;
+        }
+        
+        if (xmlDoc.documentElement.nodeName=="parsererror"){  //test the error of XML document
+            
+        	alert("Error in XML file");
+            return;
+        }
+		
+        if (window.ActiveXObject){ //if IE, simply execute script (due to async prop).
+        
+        	if (xmlDoc.parseError.errorCode != 0) {
+            	
+        		var myErr = xmlDoc.parseError;
+           		generateError(xmlDoc);
+            	hWin = window.open("", "Error", "height=300,width=340");
+            	hWin.document.write(html_text);
+            
+        	}else{  
+        		
+        		generateHTML(xmlDoc);
+            	hWin = window.open("", "Assignment4", "scrollbars=yes, height=1000,width=1000");
+            	hWin.document.write(html_text);
+            }
+        
+        }else{ //else if FF, execute script once XML object has loaded
+        
+        	if(xmlDoc.getElementsByTagName("Listing").length<=0){
+            	alert("No listing in XML file");
+            }else{
+        		xmlDoc.onload=generateHTML(xmlDoc);
+            	hWin = window.open("", "Assignment4", "scrollbars=yes, height=1000,width=1000");
+            	hWin.document.write(html_text);  
+            }
+        	
+        }
+        	
+        hWin.document.close();
+        
+	}
+	
+	function generateHTML(xmlDoc){
+		
+		ELEMENT_NODE = 1;    // MS parser doesn't define Node.ELEMENT_NODE
+        root=xmlDoc.DocumentElement;
+        html_text="<html><head><title>XML Parse Result</title></head><body>";
+        html_text+="<table border='2'>";
+        houses=xmlDoc.getElementsByTagName("Listings");
+        house=houses.item(0).childNodes;
+		
+        html_text+="<tbody>"; 
+        html_text+="<tr>";
+        
+        // output the headers
+        for(i=0;i<house.length;i++){
+        	
+        	if(house.item(i).nodeType==ELEMENT_NODE){
+        		
+        		header=house.item(i).nodeName;
+        		if(header=="Listing"){
+        			html_text+="<th colspan='7'>Listing</th></tr><tr>";
+        		}
+        		             
+                	child=house.item(i).childNodes;	
+                	
+                	for(k=0;k<child.length;k++){
+                    	
+                    	if(child.item(k).nodeType==ELEMENT_NODE){
+                    		
+                    		header=child.item(k).nodeName;
+                    		if(header=="ListingDetails"){
+								html_text+="<th>Details</th>";
+							}else{
+                    			html_text+="<th>"+header+"</th>"; 
+							}
+							child2=child.item(k).childNodes;	
+							for(j=0;j<child2.length;j++){
+								
+								if(child2.item(j).nodeType==ELEMENT_NODE){
+									
+									header=child2.item(j).nodeName;
+									if(header=="Image"){
+										html_text+="<th colspan='3'>"+header+"</th>";
+									}else if(child2.item(j).nodeName=="ListingUrl"){
+										html_text+="<th>Listing URL</th>";
+									}else{
+                    					html_text+="<th>"+header+"</th>"; 
+									}
+								}
+							}
+							html_text+="</tr><tr>";
+							html_text+="<td>&nbsp;</td>";
+							
+							for(j=0;j<child2.length;j++){
+								
+								if(child2.item(j).nodeType==ELEMENT_NODE){
+									
+									if(child2.item(j).nodeName=="Image"){
+										html_text+="<td colspan='3'><img src='"+child2.item(j).firstChild.nodeValue+"' width='100%' height='100%'></td>";
+									}else if(child2.item(j).nodeName=="ListingUrl"){
+										html_text+="<td><a href='"+child2.item(j).firstChild.nodeValue+"'>Link to listing</a></td>";
+									}else{
+										html_text+="<td>"+child2.item(j).firstChild.nodeValue+"</td>";
+									}
+								}
+							}
+							html_text+="</tr>";
+                    	}
+                	}
+        	}
+        }
+        
+        html_text+="</tbody>";
+        html_text+="</table>";
+        html_text+="</bo"+"dy></html>";
+    }
+</script>
+    </head>
+    <body>
+        <p style="text-align:center;" >Enter URL for Real Estate Catalog XML File</p>
+        <form name="myform" id="location" style="text-align:center;">
+            <input id="input" type="text" name="URL" maxlength="100" size="25" autofocus />
+            <br></br>
+            <input type="submit" name="submit" value="Submit Query"  onClick="viewXML(input.value)" />
+        </form>
+        <noscript>
+
+</body>
+</html>
