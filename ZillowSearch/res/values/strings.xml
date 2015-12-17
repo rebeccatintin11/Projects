@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ZillowSearch</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="address">Address*:</string>
+    <string name="city">City*:</string>
+    <string name="state">State*:</string>
+    <string name="title">Search Your Property Here</string>
+    <string name="addresss_hint">Street Address</string>
+    <string name="city_hint">City</string>
+    <string name="state_hint">Choose State</string>
+    <string name="button">Search</string>
+    <string name="zillow">zillow logo</string>
+    <string name="zillow_claim1"> \u00a9 Zillow, Inc., 2006&#8211;2014\nUse is subject to <a href="http://www.zillow.com/corp/Terms.htm">Terms to Use</a>\n<a href="http://www.zillow.com/zestimate/">What is Zestimate?</a></string>
+	<string name="button_p">Previous</string>
+	<string name="button_n">Next</string>
+	<string name="facebook_api_id">354319431415990</string>
+	<string name="share">Share</string>
+	<string name="resultActivity">Results from Zillow</string>
+	<string name="required">This field is required</string>
+	<string name="no_match">No exact match found--Verify that the given address is correct</string>
+	
+		
+</resources>

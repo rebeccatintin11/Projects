@@ -1,0 +1,135 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/chicago_skyline_479837006"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="rebecca.example.zillowsearch.MainActivity" >
+
+    <TextView
+        android:id="@+id/Title"
+        android:layout_width="310dp"
+        android:layout_height="40dp"
+        android:text="@string/title"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/address"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:text="@string/address"
+        android:textColor="@color/white" />
+
+    <EditText
+        android:id="@+id/streetInput"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@drawable/edittext_style"
+        android:ems="10"
+        android:hint="@string/addresss_hint"
+        android:inputType="text"
+        android:paddingLeft="5dp"
+        android:textColor="@color/black"
+        android:textSize="14sp" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/errormsg1"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:text="@string/required" 
+        android:textColor="@color/red"
+        android:visibility="invisible"/>
+
+    <TextView
+        android:id="@+id/city"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:text="@string/city"
+        android:textColor="@color/white" />
+
+    <EditText
+        android:id="@+id/cityInput"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@drawable/edittext_style"
+        android:ems="10"
+        android:hint="@string/city_hint"
+        android:inputType="text"
+        android:paddingLeft="5dp"
+        android:textColor="@color/black"
+        android:textSize="14sp" />
+    
+    <TextView
+        android:id="@+id/errormsg2"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:text="@string/required" 
+        android:textColor="@color/red"
+        android:visibility="invisible"/>
+
+    <TextView
+        android:id="@+id/state"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:text="@string/state"
+        android:textColor="@color/white" />
+
+    <Spinner
+        android:id="@+id/stateInput"
+        android:background="@drawable/edittext_style"
+        android:textColor="@color/black"
+        android:layout_height="30dp"
+        android:layout_width="match_parent"/>
+    
+    <TextView
+        android:id="@+id/errormsg3"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:text="@string/required" 
+        android:textColor="@color/red"
+        android:visibility="invisible"/>
+
+    <GridLayout
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:rowCount="1" >
+
+        <Button
+            android:id="@+id/searchButton"
+            style="android:Widget.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="@string/button" />
+
+        <ImageView
+            android:id="@+id/zillow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_gravity="center"
+            android:layout_row="0"
+            android:contentDescription="@string/zillow"
+            android:src="@drawable/get_versioned_resource" />
+    </GridLayout>
+    
+    <TextView
+        android:id="@+id/nomatch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/no_match" 
+        android:textColor="@color/white"
+        android:visibility="invisible"/>
+    
+
+</LinearLayout>

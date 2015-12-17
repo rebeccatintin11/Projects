@@ -1,0 +1,234 @@
+/*
+Template Name: CleanBusiness
+File: Layout CSS
+Author: OS Templates
+Author URI: http://www.os-templates.com/
+Licence: <a href="http://www.os-templates.com/template-terms">Website Template Licence</a>
+*/
+
+@import url(style.css);
+@import url(tables.css);
+
+body{
+	margin:0;
+	padding:0;
+	font-size:12px;
+	font-family:verdana, Arial, Helvetica, sans-serif;
+	color:#777777;
+	background-color:#FFFFFF;
+	}
+
+img{display:block; margin:0; padding:0; border:none;}
+.justify{text-align:justify;}
+.bold{font-weight:bold;}
+.center{text-align:center;}
+.right{text-align:right;}
+.nostart {list-style-type:none; margin:0; padding:0;}
+.clear{clear: both;}
+br.clear{clear:both; margin-top:-15px;}
+a{outline:none; text-decoration:none;}
+
+.fl_left{float:left;}
+.fl_right{float:right;}
+
+.imgl, .imgr{border:1px solid #999999; padding:5px;}
+.imgl{float:left; margin:0 8px 8px 0; clear:left;}
+.imgr{float:right; margin:0 0 8px 8px; clear:right;}
+
+.button{
+	margin:0;
+	padding:5px;
+	color:#FFFFFF;
+	background-color:red;
+	border:1px solid #CCCCCC;
+	cursor:pointer;
+}
+
+/* ----------------------------------------------Wrapper-------------------------------------*/
+
+div.wrapper{
+	position:relative;
+	margin:0 auto 0;
+	display:block;
+	width:960px;
+	}
+
+h1, h2, h3, h4, h5, h6{
+	margin:0;
+	padding:0;
+	font-size:20px;
+	font-weight:normal;
+	line-height:normal;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	}
+
+/* ----------------------------------------------Generalise-------------------------------------*/
+
+#header, #topbar, #homecontent, #imageline, #container, #breadcrumb, #footer{
+	display:block;
+	width:960px;
+	}
+
+/* ----------------------------------------------Header-------------------------------------*/
+
+#header{
+	padding:20px 0;
+	border-bottom:1px dotted #999999;
+	}
+
+#header .fl_left{
+	display:block;
+	float:left;
+	width:500px;
+	}
+
+#header .fl_left h1, #header .fl_left p{
+	margin:0;
+	padding:0;
+	line-height:normal;
+	}
+
+#header .fl_left h1{
+	font-size:42px;
+	}
+
+#header h1 a{
+	color:#666666;
+	background-color:#FFFFFF;
+	}
+
+/* ----------------------------------------------Header-------------------------------------*/
+
+#topbar{
+	padding:20px 0 0 0;
+	}
+
+#topbar .fl_left p{
+	margin:0 0 6px 0;
+	padding:0;
+	}
+
+/* ----------------------------------------------Homepage Intro-------------------------------------*/
+
+#intro{
+	display:block;
+	width:900px;
+	margin:5px 0 0 0;
+	padding:30px;
+	color:#666666;
+	background-color:#F0F0F0;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	}
+
+#intro a{
+	color:#C80000;
+	background-color:#F0F0F0;
+	}
+
+#intro .fl_left{
+	display:block;
+	float:left;
+	width:360px;
+	}
+
+#intro .fl_right{
+	display:block;
+	float:right;
+	width:500px;
+	}
+
+#intro .fl_right h2, #intro .fl_right ul, #intro .fl_right p{
+	margin:0;
+	padding:0;
+	list-style:none;
+	line-height:normal;
+	}
+
+#intro .fl_right h2{
+	font-size:42px;
+	margin:15px 0;
+	}
+
+#intro .fl_right p{
+	line-height:1.6em;
+	font-size:16px;
+	}
+/* ----------------------------------------------Navigation Bar-------------------------------------*/
+#topnav{
+	display:block;
+	float:center;
+	margin:0;
+	padding:0;
+	list-style:none;
+	font-size:13px;
+	font-weight:normal;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	}
+
+#topnav ul, #topnav li{
+	float:left;
+	list-style:none;
+	margin:0;
+	padding:0;
+	}
+
+#topnav li a:link, #topnav li a:visited, #topnav li a:hover{
+	display:block;
+	margin:0;
+	padding:15px 20px;
+	color:#FFFFFF;
+	background-color:#333333;
+	}
+
+#topnav ul ul li a:link, #topnav ul ul li a:visited{
+	border:none;
+	}
+
+#topnav li.last a{
+	margin-right:0;
+	}
+
+#topnav li a:hover, #topnav ul li.active a{
+	color:#FFFFFF;
+	background-color:#C80000;
+	}
+	
+#topnav li li a:link, #topnav li li a:visited{
+	width:150px;
+	float:none;
+	margin:0;
+	padding:7px 10px;
+	font-size:12px;
+	font-weight:normal;
+	color:#FFFFFF;
+	background-color:#333333;
+	}
+	
+#topnav li li a:hover{
+	color:#FFFFFF;
+	background-color:#C800   00;
+	}
+
+#topnav li ul{
+	z-index:9999;
+	position:absolute;
+	left:-999em;
+	height:auto;
+	width:170px;
+	border-left:1px solid #CCCCCC;
+	border-bottom:1px solid #CCCCCC;
+	}
+
+#topnav li ul a{width:140px;}
+
+#topnav li ul ul{margin:-32px 0 0 0;}
+
+#topnav li:hover ul ul{left:-999em;}
+
+#topnav li:hover ul, #topnav li li:hover ul{left:auto;}
+
+#topnav li:hover{position:static;}
+
+#topnav li.last a{margin-right:0;}
+
+	
